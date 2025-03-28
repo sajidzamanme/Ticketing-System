@@ -380,7 +380,11 @@ void returnToMenu()
 {
     printf("Press Enter to go back to Menu.");
     getchar();
-    system("cls");
+    #ifdef _WIN32
+      system("cls");  // Windows
+    #else
+      system("clear"); // Linux/macOS
+    #endif
 }
 
 void showCustIdName()
